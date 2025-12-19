@@ -7,22 +7,27 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("프로그램을 시작합니다!");
 
         while (true) {
 
             System.out.println("해당 월을 입력하시오. : ");
-            int month = sc.nextInt();
 
-            if (month == 0) {
-                System.out.println("프로그램을 종료합니다.");
-                return;
+            if (!sc.hasNextInt()) {
+                System.out.println("잘못된 입력입니다!");
+                sc.next();
+                continue;
             }
 
+            int month = sc.nextInt();
+            if (month == 0) {
+                System.out.println("프로그램을 종료합니다.");
+                break;
+            }
             if (month < 1 || month > 12) {
                 System.out.println("잘못된 입력입니다.");
                 continue;
             }
-
             switch (month) {
                 case 3, 4, 5:
                     System.out.println("봄");
