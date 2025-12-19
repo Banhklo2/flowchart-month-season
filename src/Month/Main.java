@@ -9,16 +9,23 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Month month = new Month();
 
+        System.out.println("프로그램을 시작합니다.");
+
         while (true) {
 
             System.out.println("해당 월을 입력하시요: ");
-            int monthInput = sc.nextInt();
 
+            if(!sc.hasNextInt()) {
+                System.out.println("잘못된 입력입니다!");
+                sc.next();
+                continue;
+            }
+
+            int monthInput = sc.nextInt();
             if (monthInput == 0) {
                 System.out.println("프로그램을 종료합니다.");
                 return;
             }
-
             if (monthInput < 1 || monthInput > 12) {
                 System.out.println("잘못된 입력입니다!");
                 continue;
